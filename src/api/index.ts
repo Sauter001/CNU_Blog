@@ -14,12 +14,12 @@ export const getPostList = (): Promise<AxiosResponse<IResponsePostList>> => {
   return instance.get('/posts');
 };
 
-export const createPost = () => {
-  return null;
+export const createPost = (title: string, contents: string, tag: string) => {
+  return instance.post('/posts', { title, contents, tag });
 };
 
-export const getPostById = (id: number) => {
-  return instance.get(`/post/${id}`);
+export const getPostById = (id: string) => {
+  return instance.get(`/posts/${id}`);
 };
 
 export const updatePostById = () => {

@@ -60,11 +60,67 @@ const Text = styled.p`
 `;
 
 const Post = () => {
+  const navigate = useNavigate();
   const params = useParams();
   const { postId } = params;
+  console.info(postId);
+  const [post, setPost] = useState<IPost | undefined>(undefined);
 
-  // todo (4) post 컴포넌트 작성
-  return <div style={{ margin: '5.5rem auto', width: '700px' }}>나는 포스트</div>;
+  const fetchPostById = async () => {
+    const { data } = await getPostById(postId ?? '');
+    const { post } = data;
+    setPost(post);
+  };
+
+  const clickDeleteButton = () => {
+    const result = window.confirm('정말로 삭제하시겠습니까?');
+    if (result) {
+      requestDeletePostById();
+    }
+  };
+
+  const requestDeletePostById = async () => {
+    await deletePostById(postId);
+    navigate('/');
+  };
+
+  useEffect(() => {
+    fetchPostById();
+  }, []);
+
+  if (!post) {
+    return <NotFound />;
+  }
+
+  return (
+    <div style={{ margin: '5.5rem auto', width: '700px' }}>
+      <div>
+        <Title>{post?.title}</Title>
+        <Toolbar>
+          <Info>
+            <div>n분전</div>
+          </Info>
+          <div>
+            <Link to="/write" state={{ postId }}>
+              <TextButton>수정</TextButton>
+            </Link>
+            <TextButton>수정</TextButton>
+            <TextButton>삭제</TextButton>
+          </div>
+        </Toolbar>
+        {post?.tag && (
+          <TagWrapper>
+            <Tag>#{post?.tag}</Tag>
+          </TagWrapper>
+        )}
+        <ContentsArea>
+          {post?.contents?.split('\n').map((text, index) => (
+            <Text key={index}>{text}</Text>
+          ))}
+        </ContentsArea>
+      </div>
+    </div>
+  );
 };
 
 export default Post;
