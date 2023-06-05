@@ -1,8 +1,8 @@
-import {useEffect, useState} from 'react';
-import {useParams, Link, useNavigate} from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
-import {deletePostById, getPostById} from '../api';
-import {IAdvertisement, IPost} from '../api/types';
+import { deletePostById, getPostById } from '../api';
+import { IAdvertisement, IPost } from '../api/types';
 import NotFound from '../components/NotFound';
 import Tag from '../components/Tag';
 
@@ -60,11 +60,11 @@ const Text = styled.p`
 `;
 
 const Post = () => {
-    // todo (4) post 컴포넌트 작성
-    const params = useParams();
-    const {postId} = params;
+  const params = useParams();
+  const { postId } = params;
 
-    return <div style={{margin: '5.5rem auto', width: '700px'}}></div>;
+  // todo (4) post 컴포넌트 작성
+  return <div style={{ margin: '5.5rem auto', width: '700px' }}>나는 포스트</div>;
 };
 
 export default Post;

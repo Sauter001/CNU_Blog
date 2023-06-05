@@ -32,11 +32,7 @@ const list = [
 ];
 
 const Home = () => {
-  return
-  <div>
-    {/*todo (3-1) post 목록 작성*/}
-    {list.map((item) => (<PostListItem key={item.post.id} {...item.post} />))}
-  </div>;
+  return <div>{/*todo (3-1) post 목록 작성*/}</div>;
 };
 
 export default Home;

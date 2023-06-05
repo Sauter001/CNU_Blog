@@ -1,6 +1,5 @@
-import axios, {AxiosResponse} from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { IPostWithAd, IResponsePostList } from './types';
-import * as url from "url";
 
 const instance = axios.create({
   headers: {
@@ -11,16 +10,16 @@ const instance = axios.create({
 
 // todo (6) api 작성
 
-export const getPostList = () : Promise<AxiosResponse<IResponsePostList>> => {
-  return instance.get( '/posts');
+export const getPostList = (): Promise<AxiosResponse<IResponsePostList>> => {
+  return instance.get('/posts');
 };
 
 export const createPost = () => {
   return null;
 };
 
-export const getPostById = () => {
-  return instance.get('post/${id}' );
+export const getPostById = (id: number) => {
+  return instance.get(`/post/${id}`);
 };
 
 export const updatePostById = () => {

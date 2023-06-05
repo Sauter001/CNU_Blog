@@ -1,25 +1,21 @@
-import {NavLink, Outlet} from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import styled from '@emotion/styled';
-import Tag from "../components/Tag";
-import Header from "../components/Header";
 
 const Nav = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 1.325rem;
-  width: 10rem;
+  width: 8rem;
   height: 3rem;
   text-decoration: none;
   transition: color 0.25s ease-in-out 0s;
   font-weight: 600;
   margin: auto;
   padding-top: 20px;
-
   a {
     color: #777;
   }
-
   .active {
     color: rgb(50, 148, 248);
   }
@@ -58,29 +54,25 @@ const Description = styled.p`
   letter-spacing: -0.004em;
 `;
 
-
 const Layout = () => {
-    return (
+  return (
+    <div>
+      <Profile>
         <div>
-            <Profile>
-                {/*todo (1) 프로필 꾸미기*/}
-                <div>
-                    <ProfilePicture
-                        src="https://images.velog.io/images/ragnarok_code/post/2e1dae94-5de0-4724-93d0-bb8eb0692b7a/docker_icon.png"
-                        alt="프로필 사진"/>
-                </div>
-                <div>
-                    <Name>이승준</Name>
-                    <Description>Docker</Description>
-                </div>
-        </Profile>
-    <Nav>{/*todo (2) 메뉴 작성*/}
-                <NavLink to={'/'}>포스트</NavLink>
-                <NavLink to={'/projects'}>프로젝트</NavLink>
-            </Nav>
-            <Outlet/>
+          <ProfilePicture src="https://t1.daumcdn.net/cfile/tistory/99107A335C1EED5005" alt="프로필 사진" />
         </div>
-    );
+        <div>
+          <Name>제시</Name>
+          <Description>브롤스타즈~</Description>
+        </div>
+      </Profile>
+      <Nav>
+        <NavLink to="/">포스트</NavLink>
+        <NavLink to="/resume">소개</NavLink>
+      </Nav>
+      <Outlet />
+    </div>
+  );
 };
 
 export default Layout;
