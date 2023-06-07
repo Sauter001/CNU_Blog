@@ -16,7 +16,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/resume" element={<Resume />} />
           </Route>
-          <Route path="/post/:postId" element={<Post />} />
+          {/*todo (3-3) Post 추가*/}
         </Route>
         <Route path="/write" element={<Write />} />
       </Routes>
