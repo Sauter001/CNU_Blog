@@ -35,7 +35,7 @@ const Home = () => {
   const [posts, setPosts] = useState<IResponsePostList>([]);
   const fetchPostList = async () => {
     const { data } = await getPostList();
-    // setPosts(data);
+    setPosts(data);
   };
 
   useEffect(() => {

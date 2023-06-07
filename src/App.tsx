@@ -9,7 +9,7 @@ import Header from './components/Header';
 
 function App() {
   return (
-    <Router basename={import.meta.env.DEV ? '/' : "/CNU_Blog/"}>
+    <Router basename={import.meta.env.DEV ? '/' : '/CNU_Blog/'}>
       <Routes>
         <Route element={<Header />}>
           <Route element={<Layout />}>
@@ -20,7 +20,7 @@ function App() {
         </Route>
         <Route path="/write" element={<Write />} />
       </Routes>
-    </Routerbase>
+    </Router>
   );
 }
 

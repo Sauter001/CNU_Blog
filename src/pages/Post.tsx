@@ -102,10 +102,9 @@ const Post = () => {
           </Info>
           <div>
             <Link to="/write" state={{ postId }}>
-              <TextButton>수정</TextButton>
+              <TextButton style={{ margin: 10 }}>수정</TextButton>
             </Link>
-            <TextButton>수정</TextButton>
-            <TextButton>삭제</TextButton>
+            <TextButton onClick={clickDeleteButton}>삭제</TextButton>
           </div>
         </Toolbar>
         {post?.tag && (

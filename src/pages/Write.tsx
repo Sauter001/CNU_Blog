@@ -138,11 +138,9 @@ const Write = () => {
     if (isEdit) {
       requestUpdatePost();
     } else {
-      requestCreatePost().then(() => {
-        navigate('/');
-      });
-      navigate('/');
+      requestCreatePost();
     }
+    navigate('/');
   };
 
   return (

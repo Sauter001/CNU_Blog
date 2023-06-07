@@ -22,10 +22,10 @@ export const getPostById = (id: string) => {
   return instance.get(`/posts/${id}`);
 };
 
-export const updatePostById = () => {
-  return null;
+export const updatePostById = (id: string, title: string, contents: string, tag: string) => {
+  return instance.post(`post/${id}`, { title, contents, tag });
 };
 
-export const deletePostById = () => {
-  return null;
+export const deletePostById = (id: string) => {
+  return instance.delete(id);
 };
