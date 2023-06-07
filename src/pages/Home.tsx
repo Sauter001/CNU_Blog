@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { getPostList } from '../api';
 import PostListItem from '../components/PostListItem';
-import { IPostWithAd, IResponsePostList, TAG } from '../api/types';
+import { IResponsePostList } from '../api/types';
 import NoPostList from '../components/NoPostList';
 
-const list = [
+/*const list = [
   {
     post: {
       id: 1,
@@ -29,7 +29,7 @@ const list = [
       tag: TAG.REACT,
     },
   },
-];
+];*/
 
 const Home = () => {
   const [posts, setPosts] = useState<IResponsePostList>([]);
