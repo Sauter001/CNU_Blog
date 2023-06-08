@@ -59,15 +59,11 @@ const Layout = () => {
     <div>
       <Profile>
         <div>
-          <ProfilePicture
-            src="https://media.istockphoto.com/id/173242750/ko/%EC%82%AC%EC%A7%84/%EB%B0%94%EB%82%98%EB%82%98-%EB%B2%88%EC%B9%98.jpg?s=612x612&w=0&k=20&c=3cRaZoK04r_mV4h51onlNeIMcjMJhHiMaIICWz9F5w8="
-            alt="프로필 사진"
-          />
+          <ProfilePicture src="" alt="프로필 사진" />
         </div>
         <div>
           <Name>ST</Name>
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          <Description>('b'+'a'+ +'a'+'a').toLowerCase()</Description>
+          <Description>코딩 중...</Description>
         </div>
       </Profile>
       <Nav>
