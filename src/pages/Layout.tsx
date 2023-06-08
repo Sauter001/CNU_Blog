@@ -59,7 +59,10 @@ const Layout = () => {
     <div>
       <Profile>
         <div>
-          <ProfilePicture src="" alt="프로필 사진" />
+          <ProfilePicture
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo-ubuntu_cof-orange-hex.svg/1200px-Logo-ubuntu_cof-orange-hex.svg.png"
+            alt="프로필 사진"
+          />
         </div>
         <div>
           <Name>ST</Name>
